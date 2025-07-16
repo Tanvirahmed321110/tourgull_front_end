@@ -1,0 +1,97 @@
+/* Font Awesome Icon CDN */
+@import url("https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /*______  Color  ______ */
+    --my-primary-color: #161179;
+    --my-primary-hover-color: #261FB3;
+    --my-secondary-hover: #3D468A;
+    --my-secondary-color: #3D468A;
+    --my-sidebar-header-bg: #3d468a;
+    --my-gold: #72f714;
+    --my-green: #9a5545;
+    --my-gray: #767676;
+    --my-gray2: #b0adad;
+    --my-white: #fff;
+    --my-white-off: #F0F3F2;
+    --my-border-color: #ededed;
+    --my-border-color2: #c7c7c7;
+    --my-red: #EE1B24;
+    --my-blue: rgb(59, 59, 244);
+    --my-after: #1878F2;
+    --my-before: #256fd1ca;
+    --my-input: #1876f25b;
+    --my-dark: #333;
+
+    --my-text-color: #444444;
+    --my-text-green: #9a5545;
+    --my-body-bg: #faeded;
+
+
+    /* ______ bg color in section ______ */
+    --modal-bg: #1a161661;
+
+
+
+    /*______  Font Size  ______ */
+    --fs-xs: 12px;
+    --fs-sm: 14px;
+    --fs-md: 16px;
+    --fs-lg: 18px;
+    --fs-xl: 22px;
+    --fs-xxl: 30px;
+    --fs-xxxl: 40px;
+
+
+
+    /*______  Border Radius  ______ */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-pill: 200px;
+    --radius-round: 50%;
+
+
+
+    /*______  Font Weight  ______ */
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --font-rubik: "Montserrat", sans-serif;
+
+
+    /* ________ Gradient ________ */
+    --gradient-1: linear-gradient(to right, #016bf8, #0f3f83);
+    --gradient-2: linear-gradient(to right, #0f3f83, #016bf8);
+    --gradient-login: linear-gradient(to right, #173e57c9, #919fa7d6);
+
+
+    /*________  shadow  ________*/
+    --shadow-0: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --shadow-1: 0 2px 3px rgba(54, 54, 54, 0.04);
+    --shadow-2: 1px 2px 5px rgba(0, 0, 0, .07);
+    --shadow-3: 1px 3px 9px rgba(40, 40, 41, 0.193);
+}
+
+
+
+
+
+
+/* responsive font */
+@media (max-width:991px) {
+    :root {
+        /*______  Font Size  ______ */
+        --fs-xs: 13px;
+        --fs-sm: 15px;
+        --fs-md: 17px;
+        --fs-lg: 19px;
+        --fs-xl: 22px;
+        --fs-xxl: 25px;
+        --fs-xxxl: 36px;
+    }
+}
