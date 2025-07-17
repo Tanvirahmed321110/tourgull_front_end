@@ -646,6 +646,10 @@ tr {
     color: var(--my-gray);
 }
 
+.my-text-warring {
+    color: var(--my-warring);
+}
+
 .my-text-gray2 {
     color: var(--my-gray2);
 }
@@ -714,6 +718,10 @@ tr {
 
 .my-bg-green {
     background-color: var(--my-green);
+}
+
+.my-bg-warring {
+    background-color: var(--my-warring);
 }
 
 .my-bg-gray {
@@ -1710,6 +1718,8 @@ tr {
 .my-grid-remain-400,
 .my-grid-remain-450,
 .my-grid-remain-500,
+.my-grid-remain-550,
+.my-grid-remain-550,
 .my-grid-minmax-200,
 .my-grid-minmax-250,
 .my-grid-minmax-300,
@@ -1820,8 +1830,17 @@ tr {
     grid-template-columns: 1fr 450px;
 }
 
+
 .my-grid-remain-500 {
     grid-template-columns: 1fr 500px;
+}
+
+.my-grid-remain-550 {
+    grid-template-columns: 1fr 550px;
+}
+
+.my-grid-remain-600 {
+    grid-template-columns: 1fr 600px;
 }
 
 /* grid min max */

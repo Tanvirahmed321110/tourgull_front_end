@@ -255,61 +255,97 @@
 /*_______________________________*\
   ||     Spinner  Start Here     ||
 \*_______________________________*/
-.my-spinner,
-.my-spinner div {
-    box-sizing: border-box;
+.full-page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.575);
+    display: none;
+    z-index: 20;
 }
 
-.my-spinner {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+.full-page-loader.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.my-spinner div {
+.full-page-loader .loader {
     position: absolute;
-    border: 4px solid currentColor;
-    opacity: 1;
-    border-radius: 50%;
-    animation: my-spinner 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    z-index: 22;
 }
 
-.my-spinner div:nth-child(2) {
-    animation-delay: -0.5s;
+/* Spinner Animation Parts */
+.full-page-loader .loader::before,
+.full-page-loader .loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+    background:
+        var(--c) 50% 0,
+        var(--c) 50% 100%,
+        var(--c) 100% 50%,
+        var(--c) 0 50%;
+    background-size: 12px 12px;
+    animation: l12 0.8s infinite;
 }
 
-@keyframes my-spinner {
-    0% {
-        top: 36px;
-        left: 36px;
-        width: 8px;
-        height: 8px;
-        opacity: 0;
-    }
+.full-page-loader .loader::before {
+    margin: 4px;
+    filter: hue-rotate(45deg);
+    background-size: 8px 8px;
+    animation-timing-function: linear;
+}
 
-    4.9% {
-        top: 36px;
-        left: 36px;
-        width: 8px;
-        height: 8px;
-        opacity: 0;
-    }
-
-    5% {
-        top: 36px;
-        left: 36px;
-        width: 8px;
-        height: 8px;
-        opacity: 1;
-    }
-
+/* Spin Animation */
+@keyframes l12 {
     100% {
-        top: 0;
-        left: 0;
-        width: 80px;
-        height: 80px;
-        opacity: 0;
+        transform: rotate(.5turn);
+    }
+}
+
+
+
+
+/*****  for loader button  *****/
+.my-btn .btn-loader {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a6;
+    display: none;
+    opacity: 1;
+}
+
+.my-btn .btn-loader.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-btn .btn-loader span {
+    width: 18px;
+    height: 18px;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    position: absolute;
+    z-index: 3;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
 
@@ -460,7 +496,15 @@
     background-color: orange;
 }
 
+.my-btn:active {
+    background-color: var(--my-before);
+}
 
+/* button disabled */
+.my-btn:disabled {
+    cursor: no-drop;
+    opacity: .6;
+}
 
 
 
@@ -862,12 +906,12 @@ textarea::placeholder {
 
 .my-modal .modal-content {
     max-width: 600px;
-    min-width: 480px;
+    min-width: 420px;
     height: fit-content;
     width: fit-content;
     max-height: 98dvh;
     background-color: var(--my-white);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xxl);
     overflow: hidden;
     border: 1px solid var(--my-white-off);
     position: relative;
@@ -907,18 +951,15 @@ textarea::placeholder {
 .my-modal .modal-body {
     flex: 1 1 auto;
     overflow-y: auto;
-    padding: 16px 16px;
+    padding: 24px;
     min-height: 0;
 }
 
 
 
 .my-modal .modal-content .footer {
-    background-color: var(--my-white-off);
     width: 100%;
-    padding: 12px 16px;
     flex: 0 0 auto;
-    background-color: var(--my-white-off);
 }
 
 .modal-close-btn {
@@ -955,6 +996,73 @@ textarea::placeholder {
 
 .my-modal .modal-close-btn:active {
     transform: translateX(3px);
+}
+
+
+
+/********  success , warring and danger modal  ********/
+.my-modal.common {
+    display: none;
+}
+
+.my-modal.success.active {
+    display: flex;
+}
+
+.my-modal.danger.active {
+    display: flex;
+}
+
+.my-modal.warrning.active {
+    display: flex;
+}
+
+.my-modal.common {
+    border-radius: 20px;
+}
+
+.my-modal.common .modal-content {
+    border-radius: var(--radius-xxl);
+}
+
+.my-modal.common .icon {
+    width: 46px;
+    height: 46px;
+    color: var(--my-white);
+    border-radius: 50%;
+}
+
+.my-modal.common .desc {
+    max-width: 260px;
+    margin-top: 4px;
+}
+
+.my-modal.common .header {
+    height: 50px;
+}
+
+.my-modal.common .header .close-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-lg);
+    color: var(--my-gray);
+}
+
+.my-modal.common .footer .ok-btn {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-600);
+}
+
+.my-modal.common .header .close-btn:hover {
+    background-color: var(--my-border-color) !important;
+    color: var(--my-dark);
 }
 
 /*______ Modal End _____ */
@@ -2673,73 +2781,64 @@ input[type="radio"]:checked::after {
 /*________________________________*\
   ||        Popup   Here      ||
 \*________________________________*/
-.my-popup.my-card {
-    position: fixed !important;
-    right: -100%;
-    top: 50px;
-    z-index: 12;
-    padding: 0;
-    border: 1px solid var(--my-border-color);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    transition: .2s linear;
-}
-
-.my-popup.active {
-    right: 30px;
-}
-
-.my-popup .icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    margin: 0 auto;
-    border: 2px solid var(--my-border-color);
-    margin-top: 12px;
-    background-color: var(--my-primary-color);
-}
-
-.my-popup .icon i {
-    font-size: var(--fs-xl);
-    color: var(--my-white);
-}
-
-.my-popup .content {
-    padding: 16px;
-}
-
-
-.my-popup .head {
-    margin-bottom: 12px;
-    padding: 6px;
-    text-align: center;
-    color: var(--my-white);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.my-popup.error .icon {
-    background-color: var(--my-red);
-}
-
-.my-popup.error p {
-    color: var(--my-red);
-}
-
-.my-popup .close-btn {
-    border-radius: 0;
-    border-bottom-right-radius: 8px;
-}
-
-.my-popup .bottom {
-    display: flex;
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 20px 16px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
     align-items: center;
-    justify-content: end;
+    gap: 12px;
+    z-index: 6;
+    animation: fadeSlide 0.3s ease-out;
 }
 
-.my-modal .close-btn {
-    font-size: var(--fs-lg) !important;
+.popup.active {
+    display: flex;
 }
 
+/* Popup types */
+.popup.success {
+    background-color: #28a745;
+}
+
+.popup.warning {
+    background-color: #ffc107;
+    color: #222;
+}
+
+.popup.danger {
+    background-color: red;
+}
+
+/* Close button */
+.popup .close-btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    color: inherit;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 

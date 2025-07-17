@@ -24,8 +24,9 @@
             </div>
         </main>
 
-        <div class="modal-overlay "></div>
-        <div class="my-modal ">
+        <div class="modal-overlay"></div>
+
+        <div class="my-modal">
             <div class="modal-content">
 
                 <div class="modal-body my-has-scrollbar-sm">
@@ -49,6 +50,79 @@
                 <div class="footer"><Button class="my-btn my-primary-button">hello</Button></div>
             </div>
         </div>
+
+
+        <!--**********  For success Modal  **********-->
+        <div class="my-modal common success active">
+            <div class="modal-content">
+                <div class="header">
+                    <button class="close-btn my-btn ">✖</button>
+                </div>
+                <div class="modal-body  my-gap-4 my-flex-center my-flex-column">
+                    <div class="icon my-flex-center my-fs-xl my-bg-green">✔</div>
+                    <h2>Success</h2>
+                    <p class="desc my-text-center my-text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Dolor
+                        officiis possimus
+                        magni?</p>
+                </div>
+                <div class="footer my-p-5">
+                    <button class="my-btn ok-btn my-w-100 my-bg-green my-text-white">Ok Agree</button>
+                </div>
+            </div>
+        </div>
+
+        <!--**********   For danger Modal  **********-->
+        <div class="my-modal common danger  ">
+            <div class="modal-content">
+                <div class="header">
+                    <button class="close-btn my-btn ">✖</button>
+                </div>
+                <div class="modal-body  my-gap-4 my-flex-center my-flex-column">
+                    <div class="icon my-flex-center my-fs-xl my-bg-red">✖</div>
+                    <h2>Failed !</h2>
+                    <p class="desc my-text-center my-text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Dolor
+                        officiis possimus
+                        magni?</p>
+                </div>
+                <div class="footer my-p-5 my-flex-between my-gap-4">
+                    <div>
+                        <button class="my-btn ok-btn my-bg-border my-w-100 my-text-gray">Cancle</button>
+                    </div>
+                    <div>
+                        <button class="my-btn ok-btn my-bg-red my-w-100 my-text-white">Yes Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--**********  For warrning Modal  -->
+        <div class="my-modal common warrning ">
+            <div class="modal-content">
+                <div class="header">
+                    <button class="close-btn my-btn ">✖</button>
+                </div>
+                <div class="modal-body  my-gap-4 my-flex-center my-flex-column">
+                    <div class="icon my-flex-center my-fs-xl my-bg-warring">⚠️</div>
+                    <h2>Warring</h2>
+                    <p class="desc my-text-center my-text-gray">Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Dolor
+                        officiis possimus
+                        magni?</p>
+                </div>
+                <div class="footer my-p-5 my-flex-between my-gap-4">
+                    <div>
+                        <button class="my-btn ok-btn my-bg-border my-w-100 my-text-gray">Cancle</button>
+                    </div>
+                    <div>
+                        <button class="my-btn ok-btn my-bg-warring my-w-100 my-text-white">Ok Agree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="responsive-grid">
             <div class="box">1</div>
             <div class="box">2</div>
@@ -64,13 +138,59 @@
             <div class="box">5</div>
         </div>
 
+        <div>
+            <button class="my-btn my-primary-btn">
+                <!-- For loader -->
+                <span class="btn-loader active ">
+                    <span></span>
+                </span>
 
+                Button
+            </button>
 
+            <button class="my-btn my-primary-btn" disabled>
+                Button
+            </button>
+            <button class="my-btn my-primary-btn">
+                Button
+            </button>
+        </div>
+
+        <div class="">
+
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum
+                necessitatibus earum rem
+                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
+                asperiores, nihil perspiciatis.12</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
+                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
+                asperiores, nihil perspiciatis.12</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
+                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
+                asperiores, nihil perspiciatis.12</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
+                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
+                asperiores, nihil perspiciatis.12</p>
+        </div>
 
 
         <footer>
             <h4>Footer</h4>
         </footer>
+
+
+        <!-- full page loader (when active class will add then work it) -->
+        <div class="full-page-loader active">
+            <div class="loader"></div>
+        </div>
+
+        <script>
+            window.addEventListener('load', () => {
+                const loader = document.querySelector('.full-page-loader');
+                if (loader) loader.classList.remove('active');
+            });
+        </script>
+
     </body>
 
 </html>

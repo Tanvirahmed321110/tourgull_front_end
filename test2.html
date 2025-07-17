@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Popup Alerts</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+
+            /* Popup container */
+            .popup {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 16px 20px 16px 16px;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                display: none;
+                align-items: center;
+                gap: 12px;
+                z-index: 6;
+                animation: fadeSlide 0.3s ease-out;
+            }
+
+            .popup.active {
+                display: flex;
+            }
+
+            /* Popup types */
+            .popup.success {
+                background-color: #28a745;
+            }
+
+            .popup.warning {
+                background-color: #ffc107;
+                color: #222;
+            }
+
+            .popup.danger {
+                background-color: red;
+            }
+
+            /* Close button */
+            .popup .close-btn {
+                margin-left: auto;
+                cursor: pointer;
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                background: transparent;
+                color: inherit;
+            }
+
+            /* Animation */
+            @keyframes fadeSlide {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Popup Examples -->
+        <div class="popup success active">
+            ✅ Success! Your action was completed.
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="popup warning" style="top: 80px;">
+            ⚠️ Warning! Something might go wrong.
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="popup danger" style="top: 140px;">
+            ❌ Error! Something went wrong.
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <script>
+            // Close button handler
+            document.querySelectorAll('.close-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.parentElement.classList.remove('active');
+                });
+            });
+
+            // Auto-hide after 3 seconds
+            setTimeout(() => {
+                document.querySelectorAll('.popup').forEach(el => {
+                    el.classList.remove('active');
+                });
+            }, 3000);
+        </script>
+
+    </body>
+
+</html>
