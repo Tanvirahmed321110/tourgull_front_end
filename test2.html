@@ -2,111 +2,68 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Popup Alerts</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mobile Input with Country Code</title>
         <style>
+            * {
+                box-sizing: border-box;
+            }
+
             body {
-                font-family: Arial, sans-serif;
-                margin: 0;
+                font-family: sans-serif;
                 padding: 20px;
+                background: #f9f9f9;
             }
 
-            /* Popup container */
-            .popup {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 16px 20px 16px 16px;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: 500;
-                color: #fff;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                display: none;
-                align-items: center;
-                gap: 12px;
-                z-index: 6;
-                animation: fadeSlide 0.3s ease-out;
-            }
-
-            .popup.active {
+            .phone-input-group {
                 display: flex;
+                max-width: 400px;
+                margin: auto;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                overflow: hidden;
+                background: #fff;
             }
 
-            /* Popup types */
-            .popup.success {
-                background-color: #28a745;
-            }
-
-            .popup.warning {
-                background-color: #ffc107;
-                color: #222;
-            }
-
-            .popup.danger {
-                background-color: red;
-            }
-
-            /* Close button */
-            .popup .close-btn {
-                margin-left: auto;
-                cursor: pointer;
-                font-size: 18px;
-                font-weight: bold;
+            .phone-input-group select {
+                padding: 10px;
                 border: none;
-                background: transparent;
-                color: inherit;
+                background: #f0f0f0;
+                font-size: 1rem;
+                outline: none;
+                width: 120px;
             }
 
-            /* Animation */
-            @keyframes fadeSlide {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
+            .phone-input-group input {
+                flex: 1;
+                padding: 10px;
+                font-size: 1rem;
+                border: none;
+                outline: none;
+            }
 
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            .phone-input-group:focus-within {
+                border-color: #25b09b;
+                box-shadow: 0 0 0 2px rgba(37, 176, 155, 0.2);
             }
         </style>
     </head>
 
     <body>
 
-        <!-- Popup Examples -->
-        <div class="popup success active">
-            ✅ Success! Your action was completed.
-            <button class="close-btn">&times;</button>
+        <h2>Mobile Number Input</h2>
+
+        <div class="phone-input-group">
+            <select id="country-code">
+                <option value="+880">🇧🇩 +880</option>
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+61">🇦🇺 +61</option>
+            </select>
+            <input type="tel" id="mobile" placeholder="Enter mobile number" />
         </div>
-
-        <div class="popup warning" style="top: 80px;">
-            ⚠️ Warning! Something might go wrong.
-            <button class="close-btn">&times;</button>
-        </div>
-
-        <div class="popup danger" style="top: 140px;">
-            ❌ Error! Something went wrong.
-            <button class="close-btn">&times;</button>
-        </div>
-
-        <script>
-            // Close button handler
-            document.querySelectorAll('.close-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    btn.parentElement.classList.remove('active');
-                });
-            });
-
-            // Auto-hide after 3 seconds
-            setTimeout(() => {
-                document.querySelectorAll('.popup').forEach(el => {
-                    el.classList.remove('active');
-                });
-            }, 3000);
-        </script>
 
     </body>
 

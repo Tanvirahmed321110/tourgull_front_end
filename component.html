@@ -24,11 +24,18 @@
             </div>
         </main>
 
-        <div class="modal-overlay"></div>
+        <div class="modal-overlay "></div>
 
-        <div class="my-modal">
+        <div class="my-modal ">
             <div class="modal-content">
 
+                <!-- header -->
+                <div class="header">
+                    <h2>header</h2>
+                    <button class="my-btn close-btn">✖</button>
+                </div>
+
+                <!-- body -->
                 <div class="modal-body my-has-scrollbar-sm">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, incidunt error. Laboriosam
                         veritatis, saepe suscipit fugit dolore corporis nesciunt, ab, ipsam atque veniam ratione sequi
@@ -47,13 +54,23 @@
 
                 </div>
 
-                <div class="footer"><Button class="my-btn my-primary-button">hello</Button></div>
+                <!-- footer -->
+                <div class="footer my-bg-white-off my-p-3">
+                    <div class="my-flex-between">
+                        <div>
+                            <button class="my-btn  my-bg-border2 my-outline-btn">Outline</button>
+                        </div>
+                        <div>
+                            <button class="my-btn my-primary-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
 
         <!--**********  For success Modal  **********-->
-        <div class="my-modal common success active">
+        <div class="my-modal common success ">
             <div class="modal-content">
                 <div class="header">
                     <button class="close-btn my-btn ">✖</button>
@@ -123,20 +140,6 @@
         </div>
 
 
-        <div class="responsive-grid">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
-            <div class="box">5</div>
-        </div>
-        <div class="grid-fixed-flexible my-gap-2 my-mt-4">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
-            <div class="box">5</div>
-        </div>
 
         <div>
             <button class="my-btn my-primary-btn">
@@ -156,22 +159,58 @@
             </button>
         </div>
 
-        <div class="">
 
-            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum
-                necessitatibus earum rem
-                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
-                asperiores, nihil perspiciatis.12</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
-                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
-                asperiores, nihil perspiciatis.12</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
-                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
-                asperiores, nihil perspiciatis.12</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente voluptatum necessitatibus earum rem
-                suscipit nemo neque aspernatur blanditiis dolore eius repellat quidem hic ad eaque cumque veniam
-                asperiores, nihil perspiciatis.12</p>
+
+        <!-- Popup Examples -->
+        <div class="popup success active">
+            ✅ Success! Your action was completed.
+            <button class="close-btn">&times;</button>
         </div>
+
+        <div class="popup warning" style="top: 80px;">
+            ⚠️ Warning! Something might go wrong.
+            <button class="close-btn">&times;</button>
+        </div>
+
+        <div class="popup danger" style="top: 140px;">
+            ❌ Error! Something went wrong.
+            <button class="close-btn">&times;</button>
+        </div>
+
+
+        <div>
+            <h2 style="text-align:center;">Order Progress</h2>
+
+            <div class="progress-tracker">
+                <div class="step active">
+                    <div class="circle">1</div>
+                    <div class="label">Start</div>
+                    <div class="line active"></div>
+                </div>
+
+
+                <div class="step active">
+                    <div class="circle">2</div>
+                    <div class="label">In Progress</div>
+                    <div class="line active"></div>
+                </div>
+
+
+                <div class="step">
+                    <div class="circle">3</div>
+                    <div class="label">Ready for Delivery</div>
+                    <div class="line"></div>
+                </div>
+
+
+                <div class="step">
+                    <div class="circle">4</div>
+                    <div class="label">Delivered</div>
+                </div>
+            </div>
+        </div>
+
+
 
 
         <footer>
@@ -189,8 +228,21 @@
                 const loader = document.querySelector('.full-page-loader');
                 if (loader) loader.classList.remove('active');
             });
-        </script>
 
+            // Close button handler
+            document.querySelectorAll('.close-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.parentElement.classList.remove('active');
+                });
+            });
+
+            // Auto-hide after 3 seconds
+            setTimeout(() => {
+                document.querySelectorAll('.popup').forEach(el => {
+                    el.classList.remove('active');
+                });
+            }, 3000);
+        </script>
     </body>
 
 </html>

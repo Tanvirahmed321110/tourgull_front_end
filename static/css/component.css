@@ -368,7 +368,7 @@
     justify-content: center;
     font-weight: var(--fw-500);
     font-family: inherit;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     transition: .3s linear;
     position: relative;
     overflow: hidden;
@@ -429,7 +429,11 @@
     color: var(--my-primary-color);
 }
 
-
+.my-btn.my-btn-md {
+    padding: 11px 14px;
+    font-size: var(--fs-sm) !important;
+    border-radius: 4px;
+}
 
 .my-btn.my-btn-sm {
     padding: 8px 14px;
@@ -962,41 +966,6 @@ textarea::placeholder {
     flex: 0 0 auto;
 }
 
-.modal-close-btn {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    width: 36px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 4;
-    cursor: pointer;
-    transition: transform .1s linear;
-    user-select: none;
-    box-shadow: var(--shadow-3);
-    background-color: var(--my-primary-color);
-    color: var(--my-white);
-}
-
-.modal-close-btn i {
-    font-size: var(--fs-xl);
-}
-
-.my-modal .body-content {
-    padding: 6px 16px;
-    border-left: 12px solid var(--my-white-off);
-}
-
-
-.my-modal .modal-close-btn::after {
-    content: unset;
-}
-
-.my-modal .modal-close-btn:active {
-    transform: translateX(3px);
-}
 
 
 
@@ -1041,7 +1010,8 @@ textarea::placeholder {
     height: 50px;
 }
 
-.my-modal.common .header .close-btn {
+.my-modal.common .header .close-btn,
+.my-modal .header .close-btn {
     position: absolute;
     right: 8px;
     top: 8px;
@@ -1060,7 +1030,8 @@ textarea::placeholder {
     font-weight: var(--fw-600);
 }
 
-.my-modal.common .header .close-btn:hover {
+.my-modal.common .header .close-btn:hover,
+.my-modal .header .close-btn:hover {
     background-color: var(--my-border-color) !important;
     color: var(--my-dark);
 }
@@ -3464,6 +3435,85 @@ ___________________________________*/
 
 
 
+/*________________________________*\
+  ||     Progress Tracker       ||
+\*________________________________*/
+.progress-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 700px;
+}
+
+.progress-tracker .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.progress-tracker .step .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 2;
+    transition: background 0.3s;
+}
+
+.progress-tracker .step .label {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.progress-tracker .line {
+    position: absolute;
+    height: 4px;
+    background: #ccc;
+    top: 34%;
+    left: 50%;
+    right: 0;
+    z-index: 1;
+    transform: translateY(-34%);
+    width: 100%;
+}
+
+.progress-tracker .line.active {
+    background: #28a745;
+}
+
+.progress-tracker .step.active .circle {
+    background: #28a745;
+    /* Green for active/completed steps */
+}
+
+/* Progress lines between steps */
+.progress-tracker .line:nth-child(2) {
+    left: 12.5%;
+    right: 75%;
+}
+
+.progress-tracker .line:nth-child(4) {
+    left: 37.5%;
+    right: 50%;
+}
+
+.progress-tracker .line:nth-child(6) {
+    left: 62.5%;
+    right: 25%;
+}
+
 
 
 
@@ -3752,6 +3802,22 @@ ___________________________________*/
 
     .table .td[data-label=""]::before {
         content: "";
+    }
+
+
+
+    /******  Progress Tracker  *****/
+    .progress-tracker {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .step {
+        margin-bottom: 20px;
     }
 }
 
