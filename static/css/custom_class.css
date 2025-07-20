@@ -784,8 +784,13 @@ section {
     background-color: var(--my-before);
 }
 
+.my-bg-orange {
+    background-color: var(--my-orange);
+}
 
-
+.my-bg-gold {
+    background-color: var(--my-gold);
+}
 
 /*______  Word spacing _____*/
 .my-word-space-1 {

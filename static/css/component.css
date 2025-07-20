@@ -395,7 +395,7 @@
 .my-btn.my-btn-sm {
     padding: 8px 14px;
     font-size: var(--fs-sm) !important;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .my-btn.my-btn-sm i {
@@ -2350,6 +2350,40 @@ input[type="radio"]:checked::after {
 
 
 
+/*________________________________*\
+  ||     divider1   Here      ||
+\*________________________________*/
+.divider1 .divider-area {
+    height: 24px;
+    border-top: 1px solid var(--my-border-color2);
+}
+
+.divider1 .divider-area a {
+    padding: 12px 28px;
+    background-color: white;
+    margin-top: -24px;
+}
+
+
+/*________________________________*\
+  ||     Popular Name  Here      ||
+\*________________________________*/
+.popular-name .name-list a {
+    font-weight: var(--fw-500);
+}
+
+.popular-name .name-list a:hover {
+    color: var(--my-primary-color);
+}
+
+.popular-name .name-list li:not(:last-child)::after {
+    content: '';
+    border-right: 1px solid var(--my-border-color2);
+    height: 2px !important;
+    padding-left: 8px;
+}
+
+
 
 
 /*________________________________*\
@@ -2367,14 +2401,16 @@ input[type="radio"]:checked::after {
 .brigtcamp-area li {
     font-weight: var(--fw-500);
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.brigtcamp-area li::after {
-    content: '';
-    position: absolute;
-    right: -24px;
-    top: 0px;
+.brigtcamp-area li .icon {
+    font-size: var(--fs-lg);
 }
+
 
 .brigtcamp-area li:last-child {
     font-weight: var(--fw-600);
@@ -3469,23 +3505,27 @@ ___________________________________*/
 
 
 /* cart 1 */
-.cart-1 {
+.cart-1,
+.cart-4 {
     position: relative;
     background-color: var(--my-white);
     box-shadow: var(--shadow-1);
     padding: 12px;
 }
 
-.cart-1 .top .right {
+.cart-1 .top .right,
+.cart-4 .top .right {
     width: 55%;
     margin-left: auto;
 }
 
-.cart-1 .top {
+.cart-1 .top,
+.cart-4 .top {
     padding-right: 16px;
 }
 
-.cart-1 .top .left {
+.cart-1 .top .left,
+.cart-4 .top .left {
     position: absolute;
     top: -16px;
     left: -16px;
@@ -3496,7 +3536,8 @@ ___________________________________*/
 
 
 /* bottom-button */
-.cart-1 .bottom-button .my-btn {
+.cart-1 .bottom-button .my-btn,
+.cart-4 .bottom-button .my-btn {
     position: absolute;
     bottom: -22px;
     right: 16px;
@@ -3504,6 +3545,42 @@ ___________________________________*/
     color: var(--my-dark);
     font-weight: 700;
 }
+
+
+.cart-2 .item {
+    border: 2px solid var(--my-border-color);
+}
+
+.cart-4 .top .left {
+    padding: 8px;
+    background-color: var(--my-white);
+    border: 1px solid var(--my-white-off2);
+}
+
+.cart-4 .top a img {
+    max-width: 160px;
+    border-radius: var(--radius-md);
+}
+
+
+
+.ads-1 .item {
+    position: relative;
+}
+
+.ads-1 .item .my-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.ads-1 .item img {
+    width: 100%;
+}
+
+
 
 
 /*
