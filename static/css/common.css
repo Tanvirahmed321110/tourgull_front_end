@@ -30,3 +30,8 @@ footer {
     height: 50px;
     margin-top: auto;
 }
+
+.test-cart {
+    padding: 12px;
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, .1);
+}

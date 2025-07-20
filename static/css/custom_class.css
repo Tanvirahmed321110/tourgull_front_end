@@ -57,7 +57,7 @@ h2 {
 
 h3 {
     font-size: var(--fs-xl);
-    line-height: 40px;
+    line-height: 26px;
 }
 
 h4 {
@@ -95,6 +95,7 @@ a {
     transition: color .1s linear;
     user-select: none;
     font-size: inherit;
+    cursor: pointer;
 }
 
 button {
@@ -189,6 +190,10 @@ tr {
     padding: 2px;
 }
 
+section {
+    margin: 66px 0 !important;
+}
+
 
 /* ::selection {
     background-color: var(mymy-secondary-color);
@@ -201,7 +206,7 @@ tr {
 /*____________  Reused Class  ____________*/
 .my-container,
 .my-container-sm {
-    padding: 10px 16px;
+    padding: 0px 16px;
     margin: 0px auto;
     width: 100%;
     max-width: 1340px;
@@ -698,6 +703,13 @@ tr {
     color: var(--my-text-color);
 }
 
+.my-text-gold {
+    color: var(--my-gold);
+}
+
+.my-text-yellow {
+    color: var(--my-yellow);
+}
 
 /*______  Bg Color ______ */
 .my-bg-none {
@@ -710,6 +722,10 @@ tr {
 
 .my-bg-white-off {
     background-color: var(--my-white-off) !important;
+}
+
+.my-bg-white-off2 {
+    background-color: var(--my-white-off2);
 }
 
 .my-bg-blue {
@@ -1397,6 +1413,10 @@ tr {
 
 
 /*_______  Font Class  ________*/
+.my-fs-low {
+    font-size: var(--fs-low);
+}
+
 .my-fs-xs {
     font-size: var(--fs-xs);
 }

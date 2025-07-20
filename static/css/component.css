@@ -4,6 +4,9 @@
 /*_________________________________*\
   ||     Tooltip  Start Here     ||
 \*_________________________________*/
+/*
+        <div class="my-tooltip"><div>hover me </div><div class="show-text">hello </div></div>
+*/
 .my-tooltip {
     position: relative;
     cursor: pointer;
@@ -52,55 +55,6 @@
 
 
 
-
-
-
-/*__________________________________*\
-  ||     Dropdown Styles Here     ||
-\*__________________________________*/
-.my-dropdown {
-    border-radius: 4px;
-    box-shadow: var(--shadow-2);
-    border: 1px solid var(--my-white-off);
-    max-height: 500px;
-    overflow: hidden;
-    text-wrap: nowrap;
-}
-
-.my-dropdown li {
-    width: 100%;
-}
-
-.mega.my-dropdown-parent {
-    position: unset;
-}
-
-.mega-dropdown.my-dropdown {
-    width: 100%;
-    position: absolute;
-    padding: 40px;
-    left: 0;
-    top: 30px !important;
-    display: grid;
-    grid-template-columns: repeat(1fr, 4) !important;
-    z-index: 12 !important;
-    border-radius: 25px;
-    background-color: var(--my-white) !important;
-    border: 1px solid var(--my-border-color);
-}
-
-.mega-dropdown.my-dropdown ul li {
-    padding: 5px;
-    border-bottom: 1px solid var(--my-border-color);
-}
-
-.mega-dropdown.my-dropdown img {
-    max-width: 120px;
-    height: 100px;
-    padding: 2px;
-    border: 1px solid var(--my-white-off);
-    border-radius: 12px;
-}
 
 
 
@@ -255,6 +209,9 @@
 /*_______________________________*\
   ||     Spinner  Start Here     ||
 \*_______________________________*/
+/*
+        < !-- full page loader (when active class will add then work it) --><div class="full-page-loader active"><div class="loader"></div></div>
+*/
 .full-page-loader {
     position: fixed;
     top: 0;
@@ -361,12 +318,12 @@
 .my-btn-sm {
     cursor: pointer;
     user-select: none;
-    font-size: var(--fs-md) !important;
+    font-size: var(--fs-sm);
     padding: 13px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-600);
     font-family: inherit;
     border-radius: var(--radius-md);
     transition: .3s linear;
@@ -1451,6 +1408,9 @@ input[type="checkbox"]:focus {
 /*_____________________________________*\
   ||     My Dropdown Start Here      ||
 \*_____________________________________*/
+/*
+        <div class="my-dropdown-parent my-ml-5 my-p-5"><div>hover</div><div class=""><ul class="my-dropdown"><li><a href="#">Child</a></li><li><a href="#">Child</a></li><li><a href="#">Child</a></li></ul></div></div>
+*/
 .my-dropdown-parent {
     cursor: pointer;
     position: relative;
@@ -1460,21 +1420,103 @@ input[type="checkbox"]:focus {
 .my-dropdown {
     position: absolute;
     background-color: var(--my-white);
-    padding: 14px 14px;
-    padding-left: 14px;
+    padding: 12px 10px;
     border-radius: 2px;
     z-index: 4;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     opacity: 0;
     top: 20px;
-    left: -45px;
+    left: 0px;
     transition: .2s linear;
     transform: translateY(22px);
     max-height: 0px;
     min-width: 120px;
     visibility: hidden;
+    box-shadow: var(--shadow-2);
+    border: 1px solid var(--my-white-off);
+    max-height: 500px;
+    text-wrap: nowrap;
+}
+
+.my-dropdown input[type='radio'] {
+    width: 14px;
+    height: 14px;
+}
+
+input[type='radio'] {
+    width: 12px;
+    height: 12px;
+}
+
+input[type="radio"]:checked::after {
+    width: 10px;
+    height: 10px;
+}
+
+.my-dropdown li,
+.my-dropdown a {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    font-size: var(--fs-sm);
+}
+
+.my-dropdown a {
+    width: 100%;
+    padding: 4px 6px;
+    background-color: var(--my-white-off2);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+}
+
+.my-dropdown a:hover {
+    background-color: var(--my-border-color);
+}
+
+/* hover */
+.my-dropdown-parent:hover .my-dropdown {
+    display: flex;
+    opacity: 1;
+    top: calc(100% - 14px);
+    max-height: 1000px;
+    visibility: visible;
+}
+
+/*__________________________________*\
+  ||     Dropdown Styles Here     ||
+\*__________________________________*/
+
+.mega.my-dropdown-parent {
+    position: unset;
+}
+
+.mega-dropdown.my-dropdown {
+    width: 100%;
+    position: absolute;
+    padding: 40px;
+    left: 0;
+    top: 30px !important;
+    display: grid;
+    grid-template-columns: repeat(1fr, 4) !important;
+    z-index: 12 !important;
+    border-radius: 25px;
+    background-color: var(--my-white) !important;
+    border: 1px solid var(--my-border-color);
+}
+
+.mega-dropdown.my-dropdown ul li {
+    padding: 5px;
+    border-bottom: 1px solid var(--my-border-color);
+}
+
+.mega-dropdown.my-dropdown img {
+    max-width: 120px;
+    height: 100px;
+    padding: 2px;
+    border: 1px solid var(--my-white-off);
+    border-radius: 12px;
 }
 
 
@@ -1553,7 +1595,8 @@ input[type="checkbox"]:focus {
     background-color: var(--my-border-color);
 }
 
-.click-dropdown::after {
+.click-dropdown::after,
+.my-dropdown::after {
     content: '';
     position: absolute;
     top: -13px;
@@ -1562,6 +1605,11 @@ input[type="checkbox"]:focus {
     border-left: 14px solid transparent;
     border-right: 14px solid transparent;
     border-bottom: 14px solid var(--my-white);
+}
+
+.my-dropdown::after {
+    top: -13px;
+    z-index: 15;
 }
 
 .click-dropdown.mobile::after {
@@ -1575,42 +1623,15 @@ input[type="checkbox"]:focus {
 
 
 
-.my-dropdown input[type='radio'] {
-    width: 14px;
-    height: 14px;
-}
 
-input[type='radio'] {
-    width: 12px;
-    height: 12px;
-}
-
-input[type="radio"]:checked::after {
-    width: 10px;
-    height: 10px;
-}
-
-.my-dropdown li,
-.my-dropdown a {
-    display: flex;
-    align-items: start;
-    justify-content: flex-start;
-    gap: 5px;
-}
-
-/* hover */
-.my-dropdown-parent:hover .my-dropdown {
-    display: flex;
-    opacity: 1;
-    top: 6px;
-    max-height: 1000px;
-    visibility: visible;
-}
 
 
 
 
 /* base */
+/*
+        <div class="my-p-relative"><div class="base-round">0</div></div>
+*/
 .base-round {
     position: absolute;
     right: 0px;
@@ -1638,6 +1659,9 @@ input[type="radio"]:checked::after {
 /*_____________________________________*\
   ||   Live Message Start Here      ||
 \*_____________________________________*/
+/*
+                <div class="right-fixed active"><div class="item my-flex-center">Icon</div></div>
+*/
 .right-fixed {
     position: fixed;
     right: 25px;
@@ -1745,6 +1769,9 @@ input[type="radio"]:checked::after {
 /*________________________________*\
   ||    Notice  Start Here      ||
 \*________________________________*/
+/*
+        <div class="my-notice"><span>hello </span><a href="">messsage link</a></div>
+*/
 .my-notice {
     padding: 8px 16px;
     border-radius: var(--radius-md);
@@ -1766,28 +1793,34 @@ input[type="radio"]:checked::after {
 }
 
 
+
+/*
+        <div class="section-head"><p>hello </p></div>
+*/
+
 .section-head {
-    text-align: center;
+    text-align: left;
+    margin-bottom: 36px;
 }
 
 .section-head p {
     position: relative;
     color: var(--my-gray);
-    margin-top: -6px;
-    text-align: center;
+    margin-top: 2px;
+    text-align: left;
 }
 
-/* .section-head p::after {
+.section-head p::after {
     position: absolute;
     content: '';
-    left: 50%;
-    top: 25px;
-    transform: translateX(-50%);
+    left: 0%;
+    top: 22px;
+    transform: translateX(-00%);
     background-color: var(--my-border-color2);
     width: 60px;
-    height: 2px;
+    height: 1px;
 }
- */
+
 
 
 
@@ -2322,11 +2355,12 @@ input[type="radio"]:checked::after {
 /*________________________________*\
   ||     Brightcamp  Here      ||
 \*________________________________*/
+/*
+        <div class="brigtcamp-area my-container"><ul class="my-d-flex my-mt-1 my-py-3 my-align-center my-gap-10   brigtcamp-area contact-page"><li><a href="/">Home</a></li><li>Contact Us</li><li>Contact Us</li></ul></div>
+*/
 .brigtcamp-area {
     background-color: var(--my-white);
-    padding: 16px;
     border-radius: 6px;
-    margin-top: -10px;
     border-radius: 0;
 }
 
@@ -2336,9 +2370,9 @@ input[type="radio"]:checked::after {
 }
 
 .brigtcamp-area li::after {
-    content: '/';
+    content: '';
     position: absolute;
-    right: -13px;
+    right: -24px;
     top: 0px;
 }
 
@@ -3434,8 +3468,42 @@ ___________________________________*/
 }
 
 
+/* cart 1 */
+.cart-1 {
+    position: relative;
+    background-color: var(--my-white);
+    box-shadow: var(--shadow-1);
+    padding: 12px;
+}
+
+.cart-1 .top .right {
+    width: 55%;
+    margin-left: auto;
+}
+
+.cart-1 .top {
+    padding-right: 16px;
+}
+
+.cart-1 .top .left {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    z-index: 2;
+    background-color: var(--my-primary-color);
+    border-radius: 8px;
+}
 
 
+/* bottom-button */
+.cart-1 .bottom-button .my-btn {
+    position: absolute;
+    bottom: -22px;
+    right: 16px;
+    background-color: var(--my-gold);
+    color: var(--my-dark);
+    font-weight: 700;
+}
 
 
 /*
@@ -3575,6 +3643,68 @@ ___________________________________*/
     left: 62.5%;
     right: 25%;
 }
+
+
+
+
+
+
+
+
+/*____________________________________
+  ____||    Feature Start Here   ____||
+_____________________________________*/
+.feature-category-area {
+    background-color: var(--my-white);
+    padding: 12px;
+}
+
+
+
+.feature-category-area .item {
+    width: 244px;
+    height: 110px;
+    background-color: var(--my-white-off);
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    transition: .2s linear;
+    box-shadow: var(--shadow-2);
+}
+
+.feature-category-area .item h5 {
+    font-size: var(--fs-sm);
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+.feature-category-area .item:hover h5 {
+    color: var(--my-primary-color);
+
+}
+
+.feature-category-area .item img {
+    width: 40px;
+}
+
+.feature-category-area .item:hover {
+    border-radius: 18px;
+    border: 1px solid var(--my-border-color2);
+    border: 1px solid var(--my-primary-color);
+    cursor: pointer;
+}
+
+.feature-category .all-category-btn:hover {
+    color: var(--my-primary-color) !important
+}
+
+
+
+
+
 
 
 

@@ -16,6 +16,7 @@
     --my-gray2: #b0adad;
     --my-white: #fff;
     --my-white-off: #F0F3F2;
+    --my-white-off2: #ECF3FE;
     --my-border-color: #ededed;
     --my-border-color2: #c7c7c7;
     --my-red: #EE1B24;
@@ -36,6 +37,7 @@
 
 
     /*______  Font Size  ______ */
+    --fs-low: 10px;
     --fs-xs: 12px;
     --fs-sm: 14px;
     --fs-md: 16px;
