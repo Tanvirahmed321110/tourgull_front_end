@@ -2542,13 +2542,61 @@ input[type="radio"]:checked::after {
     opacity: 1;
 }
 
+/*________________________________*\
+  ||     Hover and show      ||
+\*________________________________*/
+.hover-show .item {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.hover-show .item .show-data {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .44s linear;
+}
+
+.hover-show .item .show-data img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.hover-show .item .hide-data {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    bottom: -100%;
+    background-color: var(--my-secondary-color);
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: .44s linear;
+    border-radius: 8px;
+    gap: 12px;
+}
 
 
+/* hover */
+.hover-show .item:hover .hide-data {
+    bottom: 0;
+    opacity: 1;
+    z-index: 2;
+}
 
-
-
-
-
+.hover-show .item:hover .show-data {
+    top: -100%;
+}
 
 /*________________________________*\
   ||     Message Box  Here      ||
@@ -3326,6 +3374,99 @@ input[type="radio"]:checked::after {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+/*____________________________________
+____||  Hover effect cart 1 Here  ||____
+______________________________________*/
+.hover-effect-card1 .item {
+    position: relative;
+    transition: .8s linear;
+}
+
+.hover-effect-card1 .item .top {
+    background-color: var(--my-before);
+    height: 180px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    transition: .8s linear;
+}
+
+.hover-effect-card1 .item .bottom {
+    padding: 16px;
+    height: 180px;
+    background-color: var(--my-white);
+    box-shadow: var(--shadow-2);
+    border: 1px solid var(--my-white-off2);
+    transition: .8s linear;
+}
+
+.hover-effect-card1 .item .bottom .border {
+    width: 44px;
+    height: 2px;
+    background-color: var(--my-before);
+}
+
+.hover-effect-card1 .item:hover .bottom {
+    transition: .8s linear;
+    transform: translateY(-50%);
+}
+
+.hover-effect-card1 .item:hover .top {
+    transition: .8s linear;
+    transform: translateY(50%);
+}
+
+
+/*____________________________________
+____||  Hover effect cart 2 Here  ||____
+______________________________________*/
+.hover-effect-card2 .item {
+    position: relative;
+    transition: .6s linear;
+}
+
+.hover-effect-card2 .item .top {
+    background-color: var(--my-after);
+    height: 180px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    transition: .6s linear;
+    z-index: 2;
+    width: 100%;
+    transform: translateY(50%);
+    position: relative;
+}
+
+.hover-effect-card2 .item .bottom {
+    padding: 16px;
+    height: 180px;
+    background-color: var(--my-white);
+    box-shadow: var(--shadow-2);
+    border: 1px solid var(--my-white-off2);
+    transition: .6s linear;
+    transform: translateY(-50%);
+    z-index: -1;
+    width: 100%;
+}
+
+.hover-effect-card2 .item .bottom .border {
+    width: 44px;
+    height: 2px;
+    background-color: var(--my-before);
+}
+
+.hover-effect-card2 .item:hover .bottom {
+    transition: .6s linear;
+    transform: translateY(0%);
+    z-index: 2;
+}
+
+.hover-effect-card2 .item:hover .top {
+    transition: .6s linear;
+    transform: translateY(0%);
 }
 
 
