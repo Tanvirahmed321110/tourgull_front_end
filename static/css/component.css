@@ -1913,7 +1913,7 @@ input[type="radio"]:checked::after {
     font-weight: 500;
     text-transform: capitalize;
     font-size: var(--fs-xs);
-    background-color: var(--before);
+    background-color: var(--my-before);
     border-radius: 0px;
     color: var(--my-white);
     letter-spacing: .4px;
@@ -2199,7 +2199,7 @@ input[type="radio"]:checked::after {
     z-index: 6;
     padding: 10px;
     transition: 1s ease-in-out;
-    background-color: var(--before);
+    background-color: var(--my-before);
     top: 70%;
     transform: translateY(-70%);
     height: fit-content;
@@ -2247,7 +2247,7 @@ input[type="radio"]:checked::after {
 .product-cart-area::before {
     content: '';
     position: absolute;
-    background-color: var(--before);
+    background-color: var(--my-before);
     transition: .3s linear;
     z-index: 10;
 }
@@ -3367,6 +3367,17 @@ input[type="radio"]:checked::after {
     justify-content: center;
 }
 
+/* my-icon */
+.my-icon-lg {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .my-icon-sm {
     width: 38px;
     height: 38px;
@@ -3374,6 +3385,104 @@ input[type="radio"]:checked::after {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+.section-1
+
+/* ____________ Offer  Start  ___________ */
+.section-1 {
+    background-image: url('https://tebewebe.online/bellifin/wp-content/uploads/sites/87/2024/02/bank-note-1.png');
+    background-size: 70px auto;
+    background-repeat: repeat;
+    position: relative;
+    z-index: 3;
+
+}
+
+.section-1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(242, 242, 242, 0.867), rgba(245, 245, 245, 0.571), rgba(246, 246, 246, 0.862));
+    z-index: -1;
+}
+
+.section-1 .offer .top {
+    background-color: #f6eeee;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.section-1 .offer .my-title {
+    color: var(--dark);
+    font-size: var(--fs-xxl);
+}
+
+.section-1 .offer .card {
+    border: none;
+    box-shadow: var(--shadow-2);
+}
+
+.section-1 .offer .top img {
+    width: 45px;
+}
+
+
+.section-1 .desc li i {
+    color: var(--my-warring);
+    font-size: var(--fs-lg);
+}
+
+.section-1 .desc li {
+    border-bottom: 1px dotted var(--my-border-color2);
+    padding: 8px 0;
+    color: var(--gray);
+}
+
+.section-1 .desc-header .bottom {
+    width: 100px;
+    height: 2px;
+    background-color: #109246;
+    margin-top: 2px;
+}
+
+
+
+
+
+
+/* ____________ appointment  Start  ___________ */
+.appointment-content {
+    max-width: 30%;
+    max-width: 500px;
+}
+
+.appointment-content .my-title {
+    font-size: var(--fs-xxxl);
+    line-height: 45px !important;
+    font-weight: var(--fw-700);
+}
+
+.appointment-right {
+    width: calc(100% - 550px);
+    max-width: 600px;
+    border: 10px solid var(--white-off2);
+    border-radius: 8px;
+}
+
+.appointment-content .icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: var(--white-off);
+    color: var(--gray);
+    font-size: var(--fs-xxl);
 }
 
 
@@ -3418,6 +3527,25 @@ ______________________________________*/
     transition: .8s linear;
     transform: translateY(50%);
 }
+
+
+
+
+.message-group1 .item img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-left: -12px;
+}
+
+.message-group1 .item:first-child img {
+    margin-left: 0;
+}
+
+
+
+
+
 
 
 /*____________________________________
@@ -3704,7 +3832,47 @@ ___________________________________*/
 }
 
 
+/*
+==========================================
+=====  Cart Section 5  =====
+==========================================
+*/
+.cart-5 .item {
+    position: relative;
+    transition: .2s linear;
+    border: 4px solid transparent;
+}
 
+.cart-5 .item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--white-off);
+    width: 0;
+    height: 100%;
+    transition: .2s linear;
+    background-color: var(--my-white-off2);
+    z-index: -1;
+}
+
+.cart-5 .item:hover::after {
+    width: 100%;
+    left: unset;
+    right: 0;
+}
+
+.cart-5 .item:hover {
+    transform: scale(1);
+    border: 4px solid var(--my-white);
+}
+
+
+/*
+==========================================
+=====  Ads 1  =====
+==========================================
+*/
 .ads-1 .item {
     position: relative;
 }
@@ -3779,6 +3947,222 @@ ___________________________________*/
 }
 
 
+/*________________________________*\
+  ||     project overview1       ||
+\*________________________________*/
+.project-overview1 .border {
+    width: 50px;
+    height: 2px;
+    background-color: var(--my-before);
+}
+
+
+/*________________________________*\
+  ||     project overview2       ||
+\*________________________________*/
+.project-overview2 .item {
+    background-color: var(--my-white-off);
+    border-radius: var(--radius-md);
+}
+
+.project-overview2 .icon-wrap {
+    border-radius: 2px;
+    transition: .3s linear;
+}
+
+.project-overview2 .icon-wrap,
+.project-overview2 .icon-wrap img {
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+    border: 6px solid var(--my-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: var(--shadow-1); */
+}
+
+.project-overview2 .item .border {
+    width: 44px;
+    height: 2px;
+    background-color: var(--my-border-color2);
+    transition-delay: .16s;
+}
+
+.project-overview2 .item:hover .icon-wrap {
+    /* position: absolute; */
+    transform: translateY(46px);
+}
+
+.project-overview2 .item:hover .border {
+    background-color: transparent;
+}
+
+.contact-area1 {
+    background-color: var(--white);
+    padding: 50px;
+    max-width: 1100px;
+    margin: 120px auto 50px auto;
+}
+
+.contact-area1 .left {
+    padding: 30px;
+    height: 560px;
+    width: 95%;
+    max-width: 440px;
+    background-color: var(--my-before);
+    color: var(--white);
+    margin-top: -140px;
+    position: relative;
+}
+
+.contact-area1 .left .icon {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    font-size: var(--fs-xl);
+    border-radius: 50%;
+    background-color: var(--my-dark);
+}
+
+.contact-area1 .left .icon i {
+    color: var(--my-warring);
+}
+
+.contact-area1 .form {
+    background-color: var(--my-before);
+    max-width: 500px;
+    color: var(--my-white-off);
+    padding: 30px;
+    position: relative;
+}
+
+
+
+.contact-area1 .card {
+    background-color: var(--my-white);
+    border: 1px solid var(--my-white-off);
+    box-shadow: var(--shadow-1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*________________________________*\
+  ||     Card Flip 1       ||
+\*________________________________*/
+.card-filp1 .card-front,
+.card-filp1 .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+.card-filp1 .my-card {
+    width: 100%;
+    max-width: 460px;
+    height: 600px;
+    perspective: 1000px;
+    box-shadow: unset;
+}
+
+
+
+.card-filp1 .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.card-filp1 .my-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Flip X */
+.card-filp1 .flip-y:hover .card-inner {
+    transform: rotateX(180deg);
+}
+
+.card-filp1 .card-front {
+    background-color: var(--my-before);
+}
+
+.card-filp1 .card-back {
+    background-color: var(--my-gray);
+}
+
+.card-filp1 .card-front .font-name {
+    color: var(--white);
+}
+
+.card-filp1 .card-front .post {
+    color: var(--border-color);
+}
+
+.card-filp1 .my-social li a {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+
+.card-filp1 .card-front .font-name {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-600);
+}
+
+.card-filp1 .card-front .post {
+    color: var(--my-white-off2);
+}
+
+.card-filp1 .card-front img {
+    max-height: 400px;
+    width: 100%;
+    min-width: 280px;
+    margin: 12px auto;
+    padding: 0px;
+    border: 6px solid rgba(225, 225, 230, 0.508);
+}
+
+
+
+.card-filp1 .content {
+    margin-top: 16px;
+}
+
+.card-filp1 .content p {
+    color: var(--border-color2);
+}
+
+.card-filp1 .card-back {
+    color: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+    background-color: var(--my-after);
+}
+
+.card-filp1 .my-card.flip-y:hover .card-back {
+    transform: rotateX(180deg);
+}
 
 /*________________________________*\
   ||     Progress Tracker       ||

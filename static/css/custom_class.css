@@ -1513,6 +1513,10 @@ section {
     border-radius: var(--radius-lg)
 }
 
+.my-radius-xl {
+    border-radius: var(--radius-xl)
+}
+
 .my-radius-pill {
     border-radius: var(--radius-pill)
 }
@@ -1633,6 +1637,10 @@ section {
 
 
 /* Gap */
+.my-gap-half {
+    gap: 2px;
+}
+
 .my-gap-1 {
     gap: 4px;
 }
