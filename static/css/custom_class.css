@@ -391,6 +391,14 @@ section {
     box-shadow: var(--shadow-2);
 }
 
+.my-shadow-3 {
+    box-shadow: var(--shadow-3);
+}
+
+.my-shadow-4 {
+    box-shadow: var(--shadow-4);
+}
+
 
 /*_____  height  _____*/
 .my-h-100 {
@@ -1956,10 +1964,58 @@ section {
 
 
 
+/* .my-btn .icon-animation {
+    animation: btn_icon_animation2 .4s;
+    transition: .3s linear;
+} */
 
 
+/* button hover */
+.my-btn:hover .icon-animation {
+    animation: btn_icon_animation .44s;
+}
+
+.my-btn .icon-animation {
+    animation: btn_icon_animation2 .44s;
+}
 
 /*____  Animation _____*/
+@keyframes btn_icon_animation {
+
+    0%,
+    50%,
+    to {
+        transform: translateX(.4rem)
+    }
+
+    25%,
+    75% {
+        transform: translateX(.6rem)
+    }
+
+    100% {
+        transform: translateX(.3rem);
+    }
+}
+
+@keyframes btn_icon_animation2 {
+
+    0%,
+    50%,
+    to {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(-.4rem)
+    }
+
+    75% {
+        transform: translateX(-.2rem)
+    }
+}
+
+
 @keyframes on-off {
     0% {
         opacity: 0;
