@@ -542,7 +542,26 @@ textarea::placeholder {
     top: -16px;
 }
 
-.error-text {
+.my-input-control.error input {
+    border: 2px solid var(--my-red);
+}
+
+.my-input-control small,
+.my-input-control .error-message {
+    color: red;
+    position: absolute;
+    bottom: -12px;
+    left: 12px;
+    font-size: 12px;
+    visibility: hidden;
+}
+
+.my-input-control.error small,
+.my-input-control.error .error-message {
+    visibility: visible;
+}
+
+/* .error-text {
     display: none;
     font-size: var(--fs-sm);
     color: red;
@@ -558,8 +577,7 @@ textarea::placeholder {
     display: block;
 }
 
-
-
+*/
 
 /* show hide icon in input */
 .my-input-control .show-hide-password {
@@ -3281,7 +3299,52 @@ input[type="radio"]:checked::after {
 
 
 
+/* Button Animtiaon one */
+.btn-animation1 {
+    color: var(--my-white-color);
+    background-image: linear-gradient(89.97deg, var(--my-primary-color) 1.84%, #eb3de2 102.67%);
+    background-clip: border-box;
+    background-size: 200%;
+    animation: textanim 2s linear infinite;
+}
 
+
+.btn-animation1::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 0;
+    height: 100%;
+    background: linear-gradient(89.97deg, #eb3de2 1.84%, var(--my-primary-color) 102.67%);
+    border-radius: 6px;
+    z-index: -1;
+    transition: ease-in .2s;
+}
+
+@keyframes textanim {
+    100% {
+        background-position: 200%;
+    }
+}
+
+.btn-animation1:hover::after {
+    right: 0;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(89.97deg, #e32ae3 1.84%, var(--my-primary-color) 100.67%);
+    transition: ease-in .3s;
+}
+
+.btn-animation1:hover span {
+    position: relative;
+    z-index: 5;
+    transition: ease-in .2s;
+}
+
+.btn-animation1:hover {
+    animation: unset;
+}
 
 
 /*________________________________*\
@@ -4256,6 +4319,150 @@ ________________________________*/
 
 
 
+/*_______________________________
+__________||  Login 1  ||________
+________________________________*/
+.login2 {
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+    padding: 40px;
+}
+
+.login2-container {
+    width: 850px;
+    height: 550px;
+    position: relative;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+.login2 .form-box {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    z-index: 1;
+}
+
+.login2 .form-box form {
+    width: 100%;
+}
+
+.login2 .form-box .my-input-control input {
+    background-color: #eee;
+    color: #333;
+    width: 100%;
+    padding-right: 50px;
+}
+
+.login2 .form-box .my-input-control input::placeholder {
+    color: #888;
+}
+
+.login2 .form-box .my-input-control i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 16px;
+}
+
+/* button */
+.login2 .form-box .my-btn {
+    width: 100%;
+    height: 44px;
+    background-color: #7494ec;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+/* social-login */
+.social-login .item {
+    padding: 8px 12px;
+    border: 1px solid var(--my-border-color);
+    border-radius: 4px;
+}
+
+.social-login .item:hover {
+    border-color: var(--my-border-color2);
+}
+
+/* form box register */
+.form-box.register {
+    visibility: hidden;
+}
+
+
+.login2-container .form-toggle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login2-container .form-toggle-box .toggle-btn {
+    padding: 12px 18px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+
+
+
+
+.form-toggle-box .toggle-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #7494ec;
+    left: 0px;
+    border-top-right-radius: 140px;
+    border-bottom-right-radius: 140px;
+    color: white;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    z-index: 13;
+    visibility: hidden;
+}
+
+
+
+/* active class */
+.form-toggle-box .toggle-wrap.toggle-login.active {
+    visibility: visible;
+}
+
+.form-toggle-box .toggle-wrap.toggle-register.active {
+    visibility: visible;
+}
+
+.form-box.register.active {
+    right: 0;
+    z-index: 4;
+    visibility: visible;
+}
+
+
+
+
+
+
 
 
 /* ____________   Our Rates  ___________ */
@@ -4290,6 +4497,59 @@ ________________________________*/
 }
 
 
+
+
+
+
+
+
+/*________________________________*\
+  ||     Message Page       ||
+\*________________________________*/
+.message-page {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px;
+    border: 4px solid var(--my-white);
+    border-radius: 12px;
+    background-color: #efefef;
+}
+
+.message-page .inner {
+    background-color: var(--my-white);
+    padding: 32px 24px;
+    border-radius: 12px;
+}
+
+.message-page .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--my-border-color);
+}
+
+.message-page .icon i {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+}
+
+.message-page.warrning .icon i {
+    color: orange;
+}
+
+.message-page.danger .icon i {
+    color: red;
+}
+
+.message-page p {
+    color: #777
+}
+
+.message-page .title {
+    color: #333;
+}
 
 /*________________________________*\
   ||     Timer Start Here       ||

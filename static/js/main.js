@@ -276,16 +276,6 @@ closeButtonF()
 
 
 
-$(document).ready(function () {
-    $('.js-example-basic-multiple').select2();
-});
-
-$(document).ready(function () {
-    $('.js-example-basic-single').select2();
-});
-
-
-
 
 
 
@@ -425,4 +415,33 @@ function setupTabs(buttonSelector, contentSelector, tabMap) {
             }
         });
     });
+}
+
+
+
+
+
+
+// ============  For Login 2 ===========
+const login2Section = document.getElementById('login2')
+
+if (login2Section) {
+    const info_login_btn = login2Section.querySelector('.login-btn')
+    const info_register_btn = login2Section.querySelector('.register-btn')
+    const login_form = login2Section.querySelector('.login')
+    const register_form = login2Section.querySelector('.register')
+
+    info_login_btn.addEventListener('click', function () {
+        info_login_btn.parentElement.classList.remove('active')
+        info_register_btn.parentElement.classList.add('active')
+        register_form.classList.remove('active')
+        login_form.classList.add('active')
+    })
+
+    info_register_btn.addEventListener('click', function () {
+        info_register_btn.parentElement.classList.remove('active')
+        info_login_btn.parentElement.classList.add('active')
+        register_form.classList.add('active')
+        login_form.classList.remove('active')
+    })
 }
