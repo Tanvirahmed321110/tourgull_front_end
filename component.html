@@ -1433,7 +1433,7 @@
 
                                     <!-- or login in social -->
                                     <div class="my-mt-10">
-                                        <p>or login in social platforms</p>
+                                        <p class="my-text-gray">or login in social platforms</p>
                                         <div class="my-flex-center social-login my-mt-2 my-gap-2">
                                             <button class="item"><i class="fa-brands fa-google"></i></button>
                                             <button class="item"><i class="fa-brands fa-facebook"></i></button>
@@ -1492,7 +1492,7 @@
 
                                     <!-- or login in social -->
                                     <div class="my-mt-10">
-                                        <p>or login in social platforms</p>
+                                        <p class="my-text-gray">or login in social platforms</p>
                                         <div class="my-flex-center social-login my-mt-2 my-gap-2">
                                             <button class="item"><i class="fa-brands fa-google"></i></button>
                                             <button class="item"><i class="fa-brands fa-facebook"></i></button>
@@ -3168,6 +3168,13 @@
                             <div class="">
                                 <a class="icon-hover" href="#">🛒</a>
                             </div>
+
+                            <div>
+                                <a class="hover-btn1 " href="/log-in">
+                                    <div class=""></div>
+                                    <span class="texts">Add to Cart</span>
+                                </a>
+                            </div>
                         </div>
 
                         <div class="my-mt-5">
@@ -3181,6 +3188,81 @@
                             </span>
                         </div>
 
+
+                        <!-- animation  -->
+                        <div class="my-p-relative">
+                            <div class="latest-ribbon latest-ribbon-green">3 weeks from now</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Scroll Text -->
+            <section>
+                <div class="my-container">
+                    <div class="my-bg-white my-p-3 my-border2 my-radius-md my-mt-5">
+                        <div class="marquee-wrapper">
+                            <div class="marquee-text">
+                                অর্ডার করার পূর্বে কাস্টমার কেয়ার থেকে পণ্যের স্টক ও ডেলিভারী সম্পর্কে জেনে
+                                নেয়ার জন্য অনুরোধ করা
+                                যাচ্ছে।
+                                প্রযুক্তি পণ্যের মূল্য অস্থিতিশীল হওয়ার কারনে যেকোনো মুহূর্তে যেকোনো
+                                প্রযুক্তি পণ্যের মূল্য পরিবর্তন
+                                হতে
+                                পারে।
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Alert -->
+            <section>
+                <div class="my-container">
+                    <div class="my-bg-white my-p-3 my-border2 my-radius-md my-mt-5">
+                        <!-- Section Head -->
+                        <div class="section-head my-text-left">
+                            <h3 class="my-fw-bolder">My Alert</h3>
+                            <p>Sub Desc</p>
+                        </div>
+                        <div class="my-flex-column my-gap-2">
+                            <div class="my-alert alert-primary">
+                                alert primary
+                            </div>
+                            <div class="my-alert alert-danger">
+                                alert danger
+                            </div>
+                            <div class="my-alert alert-success">
+                                alert success
+                            </div>
+                            <div class="my-alert alert-warring">
+                                alert warring
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Alert -->
+            <section>
+                <div class="my-container">
+                    <div class="my-bg-white my-p-3 my-border2 my-radius-md my-mt-5">
+                        <!-- Section Head -->
+                        <div class="section-head my-text-left">
+                            <h3 class="my-fw-bolder">List Counter Li</h3>
+                            <p>Sub Desc</p>
+                        </div>
+                        <ul class="my-flex-column list-counter my-gap-2">
+                            <li>List counter 1</li>
+                            <li>List counter 2</li>
+                            <li>List counter 3</li>
+                            <li>List counter 4</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -3190,7 +3272,8 @@
 
 
             <!--====================================
-                ==========  Message Group   =========
+                ==========  Message Group   ==
+                =======
                 ==================================-->
             <section>
                 <div class="my-container">
@@ -3905,11 +3988,13 @@
             <div class="loader"></div>
         </div>
 
+        <!-- window.addEventListener('load', () => {
+        const loader = document.querySelector('.full-page-loader');
+        if (loader) loader.classList.remove('active');
+        }); -->
+
         <script>
-            window.addEventListener('load', () => {
-                const loader = document.querySelector('.full-page-loader');
-                if (loader) loader.classList.remove('active');
-            });
+
 
             // Close button handler
             document.querySelectorAll('.close-btn').forEach(btn => {

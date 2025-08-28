@@ -5,26 +5,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <style>
+            .header-hedile {
+                background-color: gainsboro;
+                padding: 22px;
+            }
+
+            .header-hedile:has(.category) {
+                background-color: red;
+            }
+        </style>
     </head>
 
     <body>
-        <!-- Sample List View -->
-        <div style="max-width:400px;margin:40px auto;">
-            <h2>Sample List View</h2>
-            <ul style="list-style:none;padding:0;">
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item 1</li>
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item 2</li>
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item 3</li>
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item 4</li>
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item 5</li>
-                <li style="padding:12px;border-bottom:1px solid #eee;">Item
-            </ul>
-
-            <form action="#">
-                <input type="text" name="name">
-                <input type="email" name="email">
-                <input type="submit" value="Submit">
-            </form>
+        <div class="header-hedile">
+            <div class="other">Other </div>
+            <div class="category">Category
+                <ul>
+                    <li>a</li>
+                </ul>
+            </div>
         </div>
     </body>
 

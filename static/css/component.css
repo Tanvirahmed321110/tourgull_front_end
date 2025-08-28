@@ -206,6 +206,50 @@
 
 
 
+/*______________________________*\
+  ||     List Counter  Start Here     ||
+\*______________________________*/
+.list-counter ul {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: list-counter;
+}
+
+
+
+.list-counter li {
+    color: var(--my-dark);
+    position: relative;
+    padding-left: 24px;
+    line-height: 16px;
+    margin-bottom: 2px;
+    counter-increment: list-counter;
+    font-weight: 500;
+}
+
+.list-counter li::after {
+    content: counter(list-counter);
+}
+
+.list-counter li::after {
+    content: counter(list-counter);
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--my-before);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--my-white);
+    font-size: var(--fs-xs);
+}
+
+
+
+
 /*_______________________________*\
   ||     Spinner  Start Here     ||
 \*_______________________________*/
@@ -305,6 +349,76 @@
         transform: rotate(360deg);
     }
 }
+
+.my-btn.my-btn-danger {
+    background-color: red;
+    color: var(--my-white);
+}
+
+.my-btn.my-btn-danger:has(i) {
+    background-color: unset;
+    color: red;
+}
+
+.my-btn.my-btn-danger i {
+    color: red;
+}
+
+/******  Hover button 1  ******/
+.hover-btn1 {
+    background-color: rgb(34, 31, 31);
+    color: rgb(255, 255, 255);
+    width: 127px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 19px;
+    margin: 26px auto auto;
+    position: relative;
+    z-index: 1;
+    outline: none;
+    border: 2px solid rgb(176, 175, 175);
+    /* Make sure ::after can be behind text */
+    overflow: hidden;
+    /* Hide ::after overflow during animation */
+    cursor: pointer;
+}
+
+.hover-btn1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(237, 27, 52);
+    transform: scaleX(0);
+    /* Start compressed horizontally */
+    transform-origin: center;
+    transition: transform 0.5s ease;
+    border-radius: 19px;
+    z-index: -1;
+    /* Push it behind the text */
+}
+
+.hover-btn1 .texts {
+    display: inline-flex;
+    position: relative;
+    margin-left: 10px !important;
+    z-index: 4;
+    /* Ensure text stays above the ::after */
+}
+
+.hover-btn1:hover::after {
+    transform: scaleX(1);
+    /* Expand to full width */
+}
+
+
 
 /*___________||  Spinner End Here  ||___________ */
 
@@ -1840,11 +1954,79 @@ input[type="radio"]:checked::after {
 }
 
 
+/***********  Marque Text   ***********/
+.marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: scroll-left 18s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(80%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 
 
 
 
+/***********  Base animation   ***********/
+.latest-ribbon-green {
+    background: linear-gradient(135deg, #2ed573 0%, #28a745 50%, #27ae60 100%);
+}
+
+.latest-ribbon {
+    position: absolute;
+    top: 8px;
+    left: -12px;
+    z-index: 10;
+    color: white;
+    font-weight: 700;
+    font-size: 0.65rem;
+    padding: 8px 20px 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0 6px 6px 0;
+    transform-origin: left center;
+    transform: perspective(200px) rotateY(-15deg) rotateX(5deg);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: latestRibbonWrap 4s ease-in-out infinite;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+@keyframes latestRibbonWrap {
+
+    0%,
+    100% {
+        transform: perspective(200px) rotateY(-15deg) rotateX(5deg);
+    }
+
+    25% {
+        transform: perspective(200px) rotateY(-20deg) rotateX(8deg) translateZ(2px);
+    }
+
+    50% {
+        transform: perspective(200px) rotateY(-12deg) rotateX(3deg) translateZ(-1px);
+    }
+
+    75% {
+        transform: perspective(200px) rotateY(-18deg) rotateX(6deg) translateZ(1px);
+    }
+}
 
 
 
@@ -4417,8 +4599,6 @@ ________________________________*/
 
 
 
-
-
 .form-toggle-box .toggle-wrap {
     position: absolute;
     width: 100%;
@@ -4625,7 +4805,38 @@ ________________________________*/
 }
 
 
+/*________________________________*\
+  ||    Alert  Start Here      ||
+\*________________________________*/
+.my-alert {
+    padding: 16px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: var(--my-white-off);
+    border: 1px solid var(--my-border-color);
+    font-weight: 600;
+}
 
+.alert-primary {
+    color: var(--my-primary-color);
+    background-color: var(--my-white-off);
+    border: px solid var(--my-primary-color)
+}
+
+.alert-success {
+    color: var(--my-green);
+    border: 1px solid var(--my-green);
+}
+
+.alert-danger {
+    color: var(--my-red);
+    border: 1px solid var(--my-red);
+}
+
+.alert-warring {
+    color: var(--my-warring);
+    border: 1px solid var(--my-warring);
+}
 
 
 
@@ -5081,6 +5292,9 @@ _____________________________________*/
     .my-btn-sm {
         padding: 12px 20px !important;
     }
+
+
+
 
 
     /****** Product Modal *****/

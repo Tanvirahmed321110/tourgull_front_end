@@ -1,0 +1,77 @@
+const form = document.getElementById('complain-form');
+    const name = form.querySelector('#name')
+    const email = form.querySelector('#email')
+    const phone = form.querySelector('#phone')
+    const product_model = form.querySelector('#product-model')
+    const details = form.querySelector('#details')
+
+    //======  show error message  ======
+    function shwoErrorMessage(input, message) {
+        const inputControl = input.parentElement
+        const errorTag = inputControl.querySelector('.error-text')
+
+        if (errorTag) {
+            inputControl.className = 'my-input-control error'
+            errorTag.innerText = message;
+            console.log(errorTag)
+        }
+    }
+
+    //======  remove error message  ======
+    function removeErrorMessage(input) {
+        const inputControl = input.parentElement
+        inputControl.className = 'my-input-control'
+    }
+
+    //=======  Phone validation  =======
+    function isValidBDPhone(phone) {
+        const bdPhoneRegex = /^(?:\+8801|8801|01)[3-9]\d{8}$/;
+        return bdPhoneRegex.test(phone.trim());
+    }
+
+
+    // When click submit form
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        let is_valid = true
+
+        // for name
+        if (name.value.trim() == '') {
+            shwoErrorMessage(name, `${name.name}  field is required`)
+            is_valid = false
+        }
+        else {
+            removeErrorMessage(name)
+        }
+
+        // for phone
+        if (phone.value.trim() == '') {
+            shwoErrorMessage(phone, `${phone.name} field is required`);
+            is_valid = false;
+        }
+        else if (!isValidBDPhone(phone.value)) { // Check if phone is valid
+            shwoErrorMessage(phone, "Invalid  phone number");
+            is_valid = false;
+        }
+        else {
+            removeErrorMessage(phone);
+        }
+
+        // for product model
+        if (product_model.value == '') {
+            shwoErrorMessage(product_model, `${product_model.name}  field is required`)
+            is_valid = false
+        }
+        else {
+            removeErrorMessage(product_model)
+        }
+
+
+        // for product model
+        if (details.value == '') {
+            shwoErrorMessage(details, `${details.name}  field is required`)
+            is_valid = false
+        }
+        else {
+            removeErrorMessage(details)
+        }
